@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/Spacely.png"; // Adjust the path as necessary
-
+import logo from "../assets/Spacely.png"; 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
