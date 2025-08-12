@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Copyright } from "lucide-react";
 
 const Contact = () => {
   const [hoveredSocial, setHoveredSocial] = useState(null);
@@ -352,6 +353,12 @@ const Contact = () => {
             </motion.form>
           </motion.div>
         </div>
+      </div>
+
+      <div className=" flex justify-center items-center pt-24">
+      <p className=" text-center py-3 header">
+        &copy;{new Date().getFullYear()} Spacely. All rights reserved.
+      </p>
       </div>
     </motion.section>
   );
