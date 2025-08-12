@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import logo from "../assets/Spacely.png"; 
+import { Menu, X, ArrowRight } from "lucide-react";
+import logo from "../assets/Spacely.png";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -21,16 +22,16 @@ const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="header bg-white border-b border-gray-100"
+      className="header bg-amber-50 border-b border-gray-100"
     >
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16 py-11">
-          {/* Logo - Main Branding */}
+      <div className=" px-4 fixed w-full z-50 backdrop-blur-md ">
+        <div className="flex  justify-around items-center h-16 py-11">
+        {/* spacely branding */}
           <motion.div
             className="flex items-center"
             whileHover={{ scale: 1.02 }}
           >
-            <img src={logo} className="w-64 py-1" alt="Spacely Logo" />
+            <img src={logo} className="w-36 md:w-52 py-1" alt="Spacely Logo" />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -50,10 +51,35 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:flex">
             <motion.button
-              className="px-4 py-3 w-44 bg-black text-white text-sm rounded-full hover:bg-gray-800 transition-colors"
+              onClick={() => {
+                setLoading(true);
+                setTimeout(() => setLoading(false), 2000); // reset after 2s for demo
+              }}
+              className="px-4 py-3 w-44 bg-black text-white text-sm rounded-full hover:bg-gray-800 transition-colors flex items-center justify-between"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
+              {/* Circle Arrow Container */}
+              <div className="relative w-8 h-8 flex items-center justify-center">
+                {/* Circular border animation */}
+                <motion.div
+                  className="absolute inset-0 rounded-full border-2 border-blue-500"
+                  initial={{ strokeDasharray: 100, strokeDashoffset: 100 }}
+                  animate={
+                    loading
+                      ? { rotate: 360, borderColor: "#3B82F6" }
+                      : { rotate: 0 }
+                  }
+                  transition={{
+                    duration: 1.5,
+                    repeat: loading ? Infinity : 0,
+                    ease: "linear",
+                  }}
+                ></motion.div>
+
+                {/* Arrow */}
+                <ArrowRight className="w-4 h-4" />
+              </div>
               Sign Up
             </motion.button>
           </div>
