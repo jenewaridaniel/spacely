@@ -79,7 +79,7 @@ const Location = () => {
 
               <motion.h1
                 variants={itemVariants}
-                className="text-4xl heading  md:text-5xl font-light text-gray-900 leading-tight"
+                className="text-4xl heading uppercase  md:text-5xl font-light text-gray-900 leading-tight"
               >
                 Spacely Café
                 <span className="block header  text-2xl md:text-3xl text-gray-600 font-extralight mt-2">

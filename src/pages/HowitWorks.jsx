@@ -7,6 +7,7 @@ import works from "../assets/works.png";
 import PhotoAlbum from "../utility/PhotoAlbum";
 import Testimonial from "./Testimonal";
 import Location from "../utility/Location";
+import Contact from "../utility/Contact";
 
 const HowitWorks = () => {
   const steps = [
@@ -124,6 +125,10 @@ const HowitWorks = () => {
 
       <section id="location">
         <Location/>
+      </section>
+
+      <section id="contact">
+        <Contact/>
       </section>
     </section>
   );
