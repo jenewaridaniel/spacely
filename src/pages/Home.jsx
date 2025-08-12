@@ -44,7 +44,7 @@ const Home = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
+    <section id="home" className="bg-amber-50 relative min-h-screen overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
