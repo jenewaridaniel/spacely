@@ -10,7 +10,7 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "Story", href: "#story" },
-    { name: "Focus Space", href: "#focus" },
+    { name: "Focus Space", href: '/focus-room' },
     { name: "Location", href: "#location" },
     { name: "How It Works", href: "#how" },
     { name: "Testimonal", href: "#testimonal" },
