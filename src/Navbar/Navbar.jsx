@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import logo from "../assets/Spacely.png";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -50,6 +51,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex">
+            <Link to='/signup'>
             <motion.button
               onClick={() => {
                 setLoading(true);
@@ -82,6 +84,7 @@ const Navbar = () => {
               </div>
               Sign Up
             </motion.button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -146,9 +149,11 @@ const Navbar = () => {
 
                 {/* CTA Button at Bottom */}
                 <div className="p-4">
+                  <Link to='/signup'>
                   <button className="w-full px-4 py-3 bg-black text-white text-sm rounded-full hover:bg-gray-800 transition-colors">
                     Sign Up
                   </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
